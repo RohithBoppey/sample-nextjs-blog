@@ -84,18 +84,36 @@ const blogDetails = () => {
 
 	const submitHandler = async (event) => {
 		event.preventDefault();
-		console.log(useremailRef.current.value, commentRef.current.value);
+		// console.log(useremailRef.current.value, commentRef.current.value);
+
+		if(useremailRef.current.value.length === 0 || useremailRef.current.value.length === 0){
+			alert('Please enter non-empty and valid useremail and comment');
+			return;
+		}
+
+
+		if(!useremailRef.current.value.includes('@')){
+			alert('Please enter valid username');
+			return;
+		}
 
 		const newComment = {
 			comment: commentRef.current.value,
 			useremail: useremailRef.current.value,
 		};
 
-		// submit to backend		
-
-		const prevComments = Array.from(blogData.attributes.comments.comment)
+		
+		// submit to backend	
+		
+		let prevComments = null;
+		if(blogData.attributes.comments !== null){
+			prevComments = Array.from(blogData.attributes.comments.comment)
+		}else{
+			prevComments = [];
+		}
+		
+		console.log(prevComments, typeof(prevComments));
 		prevComments.push(newComment);
-		// console.log(prevComments, typeof(prevComments));
 		createCommentFunction({ variables: { id: blogData.id, comments : {comment : prevComments}} });
 		console.log("hello");
 		window.location.reload();
@@ -182,7 +200,7 @@ const blogDetails = () => {
 					/>
 					<TextField
 						id="standard-textarea"
-						label="Multiline Placeholder"
+						label="Add a new Comment"
 						placeholder="Placeholder"
 						multiline
 						variant="standard"
