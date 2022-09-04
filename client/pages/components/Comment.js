@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
@@ -12,10 +12,11 @@ const Comment = (props) => {
 			<CardActionArea>
 				<Card sx={{ display: "flex" }}>
 					<CardContent sx={{ flex: 1 }}>
-						<Typography component="h6" size="small">
+						<Typography component="h6" size="small" sx = {{fontWeight : "bold"}}>
 							{props.useremail}
 						</Typography>
-						<Typography size = 'large'>
+						<br></br>
+						<Typography size = 'large' style = {{whiteSpace: "pre-line"}}>
 							{props.comment}
 						</Typography>
 					</CardContent>

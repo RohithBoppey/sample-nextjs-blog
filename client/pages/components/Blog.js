@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
@@ -8,36 +7,7 @@ import MainFeaturedPost from "./MainFeaturedPost";
 import FeaturedPost from "./FeaturedPost";
 import Footer from "./Footer";
 
-const featuredPosts = [
-	{
-		title: "Featured post",
-		date: "Nov 12",
-		description:
-			"This is a wider card with supporting text below as a natural lead-in to additional content.",
-		image: "https://source.unsplash.com/random",
-		imageLabel: "Image Text",
-	},
-	{
-		title: "Post title",
-		date: "Nov 11",
-		description:
-			"This is a wider card with supporting text below as a natural lead-in to additional content.",
-		image: "https://source.unsplash.com/random",
-		imageLabel: "Image Text",
-	},
-];
-
 const theme = createTheme();
-
-// const getBlogDetails = async () => {
-//     const blogDetails = await fetch("http://localhost:1337/api/blog-posts");
-//     const blogDetailsJSON = await blogDetails.json();
-
-//     const blogDataArray = blogDetailsJSON.data;
-//     blogDataArray.reverse();
-//     console.log(blogDataArray);
-//     return blogDataArray;
-// };
 
 const getDate = (date) => {
 	const dateNew = date.split("T");

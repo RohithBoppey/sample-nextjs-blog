@@ -7,8 +7,6 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 
-import Link from 'next/link';
-
 const trimContent = (s) => {
 	if(s.length > 50){
 
@@ -36,11 +34,11 @@ function FeaturedPost(props) {
 						<Typography variant="subtitle1" paragraph>
 							{trimContent(post.description)}
 						</Typography>
-						<Link variant="subtitle1" href={`/blog/${post.id}`}>
-							{/* <Typography variant="subtitle1" color="primary"> */}
+						{/* <Link variant="subtitle1" href={`/blog/${post.id}`}> */}
+							<Typography variant="subtitle1" color="primary">
 								Continue reading...
-							{/* </Typography> */}
-						</Link>
+							</Typography>
+						{/* </Link> */}
 					</CardContent>
 					<CardMedia
 						component="img"

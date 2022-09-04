@@ -1,7 +1,6 @@
 import {
 	ApolloClient,
 	InMemoryCache,
-	ApolloProvider,
 	gql,
 } from "@apollo/client";
 
@@ -49,8 +48,10 @@ export default function Home() {
 	const [blogs, setBlogs] = useState();
 	// console.log(blogs);
 	return (
-		<div className={styles.container}>
-			{blogs && <Blog blogs={blogs} />}
-		</div>
+			
+			<div className={styles.container}>
+				{blogs && <Blog blogs={blogs} />}
+			</div>
+		
 	);
 }
